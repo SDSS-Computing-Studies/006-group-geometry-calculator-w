@@ -50,7 +50,8 @@ def getParams():
     # input parameter: string 
     # output parameter: return a list containing the prompts for each shape:
     # example: ["Enter the radius:","Enter the slant height:","Enter the height:"]
-    print('\nShapes: Cylinder, Cube, Rectangular Prism, Triangular Prism, Cone, Pyramid, Sphere, Pentagonal Prism, Hexagonal Prism, Tetrahedron')
+    print('\nShapes: Cylinder, Cube, Rectangular Prism, Triangular Prism, Cone, Pyramid, Sphere, Pentagonal Prism, Hexagonal Prism, Tetrahedron, Pentagonal Pyramid, ')
+
     shape = input('Enter a shape: ').strip()
     if shape == 'Cylinder':
         return [1,'Enter Radius: ','Enter Height: ']
@@ -72,6 +73,8 @@ def getParams():
         return [9,'Enter Base Length: ','Enter Height: ']
     if shape == 'Tetrahedron':
         return [10, 'Enter length of Edge: ']
+    if shape =='Pentagonal Pyramid':
+        return [11,'Enter Base Length: ','Enter Height: ']
     else:
         return [0,'Invalid Shape']
 
@@ -122,6 +125,10 @@ def getInputs(q):
         measurements[0]=10
         for x in range (1):
             measurements.append(float(input(q[1])))
+    elif q[0]==11:
+        measurements[0]=11
+        for x in range (2):
+            measurements.append(float(input(q[x+1])))
     elif q[0]==0:
         print(q[1])
         measurements[0]= 'Invalid'
@@ -159,6 +166,9 @@ def calc(x):
     #Tetrahedron
     elif x[0]==10:
         return (x[1]**3)/(6*math.sqrt(2))
+    #Pentagonal Pyramid
+    elif x[0]==11:
+        return (5/12)*math.tan(0.942478)*x[2]*math.pow(x[1],2)
     elif x[0]=='Invalid':
         return None
     
@@ -175,8 +185,8 @@ def main():
             pass
         else:
             print("Volume: ", round(info,2))
-            c = input("Quit? ") 
-            if c == "Yes" or c == "yes" or c == 'y':
+            quit = input("Quit? ") 
+            if quit == "Yes" or quit == "yes" or quit == 'y':
                 break
             else:
                 pass
