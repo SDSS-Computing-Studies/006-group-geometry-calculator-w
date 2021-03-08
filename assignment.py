@@ -50,7 +50,7 @@ def getParams():
     # input parameter: string 
     # output parameter: return a list containing the prompts for each shape:
     # example: ["Enter the radius:","Enter the slant height:","Enter the height:"]
-    print('\nShapes: Cylinder, Cube, Rectangular Prism, Triangular Prism, Cone, Pyramid, Sphere, Pentagonal Prism, Hexagonal Prism, Tetrahedron, Pentagonal Pyramid, ')
+    print('\nShapes: Cylinder, Cube, Rectangular Prism, Triangular Prism, Cone, Pyramid, Sphere, Pentagonal Prism, Hexagonal Prism, Tetrahedron, Pentagonal Pyramid, Ellipsoid, Octahedron')
 
     shape = input('Enter a shape: ').strip()
     if shape == 'Cylinder':
@@ -75,6 +75,10 @@ def getParams():
         return [10, 'Enter length of Edge: ']
     if shape =='Pentagonal Pyramid':
         return [11,'Enter Base Length: ','Enter Height: ']
+    if shape == 'Ellipsoid':
+        return [12,'Enter semi-axe A: ','Enter semi-axe B: ', 'Enter semi-axe C: ']
+    if shape == 'Octahedron':
+        return [13,'Enter length of Edge: ']
     else:
         return [0,'Invalid Shape']
 
@@ -129,6 +133,14 @@ def getInputs(q):
         measurements[0]=11
         for x in range (2):
             measurements.append(float(input(q[x+1])))
+    elif q[0]==12:
+        measurements[0]=12
+        for x in range (3):
+            measurements.append(float(input(q[x+1])))
+    elif q[0]==13:
+        measurements[0]=13
+        for x in range (1):
+            measurements.append(float(input(q[1])))
     elif q[0]==0:
         print(q[1])
         measurements[0]= 'Invalid'
@@ -169,6 +181,12 @@ def calc(x):
     #Pentagonal Pyramid
     elif x[0]==11:
         return (5/12)*math.tan(0.942478)*x[2]*math.pow(x[1],2)
+    #Ellipsoid
+    elif x[0]==12:
+        return (4/3)*math.pi*x[1]*x[2]*x[3]
+    #Octahedron
+    elif x[0]==13:
+        return (x[1]**3)/(3*math.sqrt(2))
     elif x[0]=='Invalid':
         return None
     
