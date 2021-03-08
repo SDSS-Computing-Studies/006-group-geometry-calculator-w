@@ -121,6 +121,7 @@ def getInputs(q):
         measurements[0]= 'Invalid'
 
     return measurements
+
 def calc(x):
     #Cylinder
     if x[0]==1:
@@ -151,9 +152,6 @@ def calc(x):
         return 3*math.sqrt(3)*math.pow(x[1],2)* x[2]/2
     elif x[0]=='Invalid':
         return None
-        
-    
-
 
 def main():
     # main block of code that will run your program and control program flow
