@@ -6,7 +6,7 @@ import sys
 def title():
     # Will display a title screen
     # input parameters: none needed
-    # output parameters: None
+    # output parameters: Title
     # Author: Liam
     # Modified: 
     # title
@@ -27,8 +27,8 @@ def title():
 
 def instructions():
     # Will display instructions
-    # input parameters: none needed
-    # output parameters: None
+    # input parameters: continue or quit program
+    # output parameters: Instructions of the program
     # Author: Liam
     # Modified:
     while True:
@@ -45,11 +45,11 @@ def instructions():
     return None
 
 def getParams():
-    # Will create a list of questions to be asked depending on the shape.
-    # These will be asked so that the user can enter in appropriate values
-    # input parameter: string 
-    # output parameter: return a list containing the prompts for each shape:
-    # example: ["Enter the radius:","Enter the slant height:","Enter the height:"]
+    # Choose shape and put it into a list from 0-13
+    # input parameters: Designated shape and measurements of shape
+    # output parameters: none
+    # Author: Liam Iktae Nathaniel
+    # Modified:
     print('\nShapes: Cylinder, Cube, Rectangular Prism, Triangular Prism, Cone, Pyramid, Sphere, Pentagonal Prism, Hexagonal Prism, Tetrahedron, Pentagonal Pyramid, Ellipsoid, Octahedron')
 
     shape = input('Enter a shape: ').strip()
@@ -83,11 +83,11 @@ def getParams():
         return [0,'Invalid Shape']
 
 def getInputs(q):
-    # Will prompt the user for inputs for the shape they.
-    # These will be asked so that the user can enter in appropriate values
-    # It will turn all the input data into a list
-    # input parameter: list containing the prompts/questions
-    # output parameter: return a list containing all the measurements of the shape
+    # Takes the inputs from the params and puts it into a list|x in range is how many inputs there were
+    # input parameters: none
+    # output parameters: none
+    # Author: Liam Iktae Nathaniel
+    # Modified: 03/08/2021 - Iktae
     measurements = [0]
     if  q[0]==1:
         measurements[0]=1
@@ -148,6 +148,12 @@ def getInputs(q):
     return measurements
 
 def calc(x):
+    # Based on what number it was from the list, it then uses the specified equation to solve for volume 
+    # input parameters: none
+    # output parameters: none
+    # Author: Liam Iktae Nathaniel
+    # Modified: 03/08/2021 - Iktae
+    
     #Cylinder
     if x[0]==1:
         return math.pi*(x[1]**2)*x[2]
@@ -195,6 +201,11 @@ def main():
     # main block of code that will run your program and control program flow
     # You will need to include a while loop to keep repeating the commands until
     # the user chooses to exit
+    # gathers the answer and puts it into the variable info
+    # input parameters: none
+    # output parameters: the answer and if they wish to quit
+    # Author: Liam Iktae Nathaniel
+    # Modified: 
     title()
     instructions()
     while True:
