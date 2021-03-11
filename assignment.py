@@ -6,8 +6,8 @@ import sys
 def title():
     # Will display a title screen
     # input parameters: none needed
-    # output parameters: Title
-    # Author: Liam
+    # output parameters: None
+    # Author: Liam, Nathaniel, Iktae
     # Modified: 
     # title
     print('██╗░░░██╗░█████╗░██╗░░░░░██╗░░░██╗███╗░░░███╗███████╗')
@@ -29,7 +29,7 @@ def instructions():
     # Will display instructions
     # input parameters: continue or quit program
     # output parameters: Instructions of the program
-    # Author: Liam
+    # Author: Liam, Nathaniel, Iktae
     # Modified:
     while True:
         print('This program will calculate the volume of the chosen shape')
