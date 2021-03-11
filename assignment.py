@@ -7,7 +7,7 @@ def title():
     # Will display a title screen
     # input parameters: none needed
     # output parameters: None
-    # Author: Liam
+    # Author: Liam, Nathaniel, Iktae
     # Modified: 
     # title
     print('██╗░░░██╗░█████╗░██╗░░░░░██╗░░░██╗███╗░░░███╗███████╗')
@@ -29,7 +29,7 @@ def instructions():
     # Will display instructions
     # input parameters: none needed
     # output parameters: None
-    # Author: Liam
+    # Author: Liam, Nathaniel, Iktae
     # Modified:
     while True:
         print('This program will calculate the volume of the chosen shape')
